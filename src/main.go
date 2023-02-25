@@ -2,15 +2,21 @@ package main
 
 import (
 	"encoding/json"
+	"os"
 	"time"
 
 	"github.com/imroc/req/v3"
+	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 )
 
 type Company struct {
 	Id   int    `json:"id"`
 	Name string `json:"name"`
+}
+
+func init() {
+	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 }
 
 // Unmarshal using json.Unmarshal standard golang method
