@@ -60,7 +60,7 @@ func callApiWithRetry(url string) *req.Response {
 		SetRetryBackoffInterval(1*time.Second, 5*time.Second).
 		AddRetryHook(func(resp *req.Response, err error) {
 			req := resp.Request.RawRequest
-			log.Print("Retry request: ", req.Method, req.URL)
+			log.Printf("Retry request: %s %s", req.Method, req.URL)
 		}).
 		AddRetryCondition(func(resp *req.Response, err error) bool {
 			return err != nil || resp.StatusCode >= 500
