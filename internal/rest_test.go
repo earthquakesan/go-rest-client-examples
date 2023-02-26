@@ -1,4 +1,4 @@
-package main
+package internal
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 )
 
 func TestGetSingleCompany(t *testing.T) {
-	company := getSingleCompany()
+	company := GetSingleCompany()
 	expectedCompany := Company{Id: 1, Name: "Company One"}
 	assert.Equal(t, expectedCompany, company)
 

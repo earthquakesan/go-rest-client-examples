@@ -17,6 +17,11 @@ go get github.com/rs/zerolog/log
 
 # library for yaml demarshalling (reading config)
 go get gopkg.in/yaml.v2
+
+# library for cli applications
+go get -u github.com/spf13/cobra@latest
+# see cobra-cli docs: https://github.com/spf13/cobra-cli/blob/main/README.md
+go install github.com/spf13/cobra-cli@latest
 ```
 
 ## Setup Virtual Env for Python
@@ -45,8 +50,20 @@ pip install -r rest-server/requirements.txt
 make start-webserver
 ```
 
+## Init Cobra App
+
+```
+cobra-cli init --viper -a "Firstname Lastname"
+```
+
 ## Run Tests
 
 ```
 make test
+```
+
+## Run Cobra App Commands
+
+```
+go run . company get
 ```

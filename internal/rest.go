@@ -1,4 +1,4 @@
-package main
+package internal
 
 import (
 	"encoding/json"
@@ -25,7 +25,7 @@ func init() {
 }
 
 // Unmarshal using json.Unmarshal standard golang method
-func getSingleCompany() Company {
+func GetSingleCompany() Company {
 	url := getEndpoint("/company")
 	response := callApiWithRetry(url, "GET", nil)
 	var company Company
