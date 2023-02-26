@@ -29,3 +29,27 @@ func TestGetCompanyList(t *testing.T) {
 	}
 	assert.Equal(t, expectedCompanies, companies)
 }
+
+func TestPutSingleCompany(t *testing.T) {
+	company := Company{
+		Id:   1,
+		Name: "Company One",
+	}
+	statusCode := putSingleCompany(company)
+	assert.Equal(t, 204, statusCode)
+}
+
+func TestPostCompanyList(t *testing.T) {
+	companies := []Company{
+		{
+			Id:   1,
+			Name: "Company One",
+		},
+		{
+			Id:   2,
+			Name: "Company Two",
+		},
+	}
+	statusCode := postCompanyList(companies)
+	assert.Equal(t, 204, statusCode)
+}
